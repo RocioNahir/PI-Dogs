@@ -1,0 +1,32 @@
+.card {
+    position: relative;
+    padding: 15px;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+    border: 1px solid rgba(7, 7, 7, 0.301);
+    border-radius: 15px;
+    background-color: rgb(245, 243, 243);
+    margin: 8px 8px 8px 8px;
+    transition: background-color .2s;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.637);
+    
+}
+
+.card :hover{
+    background-color: rgb(192, 192, 192);
+}
+
+.card h3 {
+    color: rgb(34, 34, 34);
+}
+
+.card p {
+    font-size: small;
+    color: black;
+}
+
+.image{
+    position: relative;
+}

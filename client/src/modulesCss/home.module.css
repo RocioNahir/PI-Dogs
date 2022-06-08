@@ -1,0 +1,56 @@
+
+.conteiner {
+    display: grid;
+}
+
+.conteinerHeader {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    color: aliceblue;
+    font-size: 20px;
+    text-decoration: none;
+    align-items: center;
+}
+
+.button {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-amarillo);
+    font-size: 15px;
+    font-weight: bold;
+    border-color: var(--color-amarillo);
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    order: initial;
+}
+
+.conteinerBody {
+    display: grid;
+    background-color: rgb(119, 113, 113);
+    margin: auto;
+}
+ 
+.conteinerFiltersOrders {
+    width: 100%;
+    height: 60px;
+    border: 1px solid rgba(7, 7, 7, 0.301);
+    background-color: rgb(56, 19, 90)7, 207;
+    text-align: center;
+    padding: 10px;
+}
+
+.conteinerRight {
+    text-align: center;
+    position: relative;
+    margin: 5px;
+
+}
+
+.conteinerCards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* display: flex;
+    flex-wrap: wrap; */
+    gap: 5px;
+}

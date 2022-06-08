@@ -1,0 +1,36 @@
+.background {
+    background-image: url(../assets/background1.jpg);
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.titulo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-white);
+    font-size: 15px;
+    font-weight: bold;
+    border-color: var(--color-white);
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+}
