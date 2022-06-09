@@ -1,0 +1,27 @@
+.searchBar input {
+    font-size: 14px;
+    padding: 5px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.searchBar button {
+    text-decoration: none;
+    background-color: rgb(196, 35, 35);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px;
+    transition: background-color .2s;
+    cursor: pointer;
+    border: none;
+    color: rgb(255, 131, 59);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.searchBar button:hover {
+    font-weight: bold;
+    color: white;
+    border-color:rgb(236, 87, 0) ;
+    background-color: rgb(236, 87, 0);
+}

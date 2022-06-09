@@ -1,27 +1,25 @@
 .conteiner {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: end;
     background-image: url(../assets/backgroundForm-1comida.jpg);
     background-position: center center;
     background-size: cover;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
 .conteinerForm {
     background-color: rgb(255, 255, 255);
-    border-radius: 40px;
-    border: 5px solid #06AED5;
+    border: 2px solid #d56306;
     padding: 50px;
-    margin: 10px;
-    width: 400px;
-    height: 500px;
+    width: 57%;
+    height: 520px;
 }
 
-.conteinerForm button {
-    justify-content: center;
+.conteinerForm h1 {
+    font-size: 60px;
 }
 
 .containerTemperaments{
@@ -54,7 +52,7 @@
     gap: 5px;
     margin: 5px;
     background-color: #789ba3b0;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     height: 30px;
@@ -62,13 +60,22 @@
 
 .buttonHome {
     text-decoration: none;
-    background-color: var(--color-white);
+    background-color: rgb(255, 131, 59);
     font-size: 15px;
     font-weight: bold;
-    border-color: var(--color-white);
-    border-radius: 20px;
+    border-color: rgb(255, 131, 59);
     padding: 10px 20px 10px 20px;
     margin: 10px;
+    transition: background-color .2s;
+    cursor: pointer;
+    color: white;
+}
+
+.buttonHome:hover {
+    font-weight: bold;
+    color: white;
+    border-color:rgb(236, 87, 0) ;
+    background-color: rgb(236, 87, 0);
 }
 
 
@@ -89,10 +96,16 @@
     font-size: 15px;
     font-weight: bold;
     border-color: var(--color-red);
-    border-radius: 20px;
     padding: 10px 20px 10px 20px;
     margin: 10px;
     color: rgb(255, 224, 224);
+}
+
+.buttonCreate:hover {
+    font-weight: bold;
+    color: white;
+    border-color:rgb(255, 3, 3) ;
+    background-color: rgb(255, 3, 3);
 }
 
 .buttonCreateDisabled {
@@ -102,7 +115,6 @@
     font-size: 15px;
     font-weight: bold;
     border-color: rgb(133, 89, 89);
-    border-radius: 20px;
     padding: 10px 20px 10px 20px;
     margin: 10px;
     color: rgb(255, 224, 224);

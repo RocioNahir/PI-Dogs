@@ -88,32 +88,32 @@ export default function DogCreate(){
         } else {
             if (!onlyNumbers.test(input.heightMin)){ errors.heightMin = 'Min. Height must be a number';}
             else if (parseInt(input.heightMin) >= parseInt(input.heightMax)){ errors.heightMin = 'Must be less than maximun height';}
-            else if (input.heightMin < 0) { errors.heightMin = 'Min. Height is invalid';}
+            else if (input.heightMin <= 0) { errors.heightMin = 'Min. Height is invalid';}
         }
 
         if(!input.heightMax){
             errors.heightMax = 'Max. Height is required';
         } else if(!onlyNumbers.test(input.heightMax)){
-            errors.heightMin = 'Maximun Height is invalid';
-        }
+            errors.heightMin = 'Max. Height is invalid';
+        } else if (input.heightMax <= 0) { errors.heightMax = 'Max. Weight is invalid';}
 
         if(!input.weightMin){
             errors.weightMin = 'Min. Weight is required';
         } else {
             if (!onlyNumbers.test(input.weightMin)) { errors.weightMin = 'Min. Weight must be a number'}
             else if(parseInt(input.weightMin) >= parseInt(input.weightMax)) { errors.weightMin = 'Must be less than maximun weight' }
-            else if (input.weightMin < 0) { errors.heightMin = 'Min. Weight is invalid';}
+            else if (input.weightMin <= 0) { errors.weightMin = 'Min. Weight is invalid';}
         }
 
         if(!input.weightMax){
             errors.weightMax = 'Max. Weight is required';
         } else if (!onlyNumbers.test(input.weightMax) && parseInt(input.weightMin) >= parseInt(input.weightMax)) {
             errors.weightMin = 'Must be greater than minimun weight'
-        }
+        } else if (input.weightMax <= 0) { errors.weightMax = 'Max. Weight is invalid';}
 
         if(!onlyNumbers.test(input.life_span)) {
             errors.life_span = 'Must be numbers'
-        } else if(parseInt(input.life_span) < 0){
+        } else if(parseInt(input.life_span) <= 0){
             errors.life_span = 'Life Span must be greater than zero'
         }
 
@@ -134,8 +134,6 @@ export default function DogCreate(){
 
     return( 
         <div className= {style.conteiner}>
-            <Link to='/home'><button className={style.buttonHome}>Volver a Home</button></Link>
-            <br/>
             <div className={style.conteinerForm}>
                 <h1>Crea tu raza</h1>
                 <form onSubmit={(e) => handleSubmit(e)}>
@@ -220,6 +218,7 @@ export default function DogCreate(){
                             })}
                         </select> 
                     </div>
+                    <Link to='/home'><button className={style.buttonHome}>Volver a Home</button></Link>
                     {!error.name && !error.heightMin && !error.heightMax && !error.weightMin && !error.weightMax ? 
                         <button type='submit' className={style.buttonCreate}>Crear!</button>
                      : <button type='submit' disabled className={style.buttonCreateDisabled}>Crear!</button>}

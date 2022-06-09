@@ -3,34 +3,74 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
-    font-weight: 500;
     font-size: 15px;
-    background-color: var(--color-blue);
-    /* background-color: rgb(184, 245, 70); */
+    width: 610px;
+    margin: 10px;
   }
   
-  .paginationConteiner a {
+  .paginationPrev {
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(224, 223, 223); 
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color .2s;
     border: 1px solid rgb(255, 255, 255);
     cursor: pointer;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
   }
+
+  .paginationConteiner a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(224, 223, 223); 
+    height: 45px;
+    width: 45px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgb(248, 159, 108);
+    transition: background-color .2s;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+  }
+
+  .paginationNext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(224, 223, 223); 
+    height: 45px;
+    width: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color .2s;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
 
   .paginationConteiner a.active {
     background-color: var(--color-celeste-claro);
     border: 1px solid turquoise;
   }
   
-  .disabled {
-    opacity: 0.2;
+  .disabledPrev {
+    opacity: 0.3;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .disabledNext {
+    opacity: 0.3;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
   
-  .paginationConteiner a:hover:not(.active){background-color: rgb(118, 118, 131);}
+  .paginationConteiner a:hover{background-color: rgb(83, 83, 83);}

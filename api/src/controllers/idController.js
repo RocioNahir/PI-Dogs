@@ -1,5 +1,5 @@
 const { Dog, Temperament } = require('../db');
-const { getDogsApi } = require('./dogsController');
+const { getDogsApi, getAll } = require('./dogsController');
 
 async function getIdDogs (req, res, next) {
     const id = req.params.id;

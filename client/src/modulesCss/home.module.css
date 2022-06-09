@@ -4,47 +4,86 @@
 }
 
 .conteinerHeader {
+    background: rgba(0, 0, 0, 0.5) url(../assets/paw.jpg);
+    background-position: 60%;
+    background-size: cover;
+    background-blend-mode: darken;
     display: flex;
-    background-color: rgb(0, 0, 0);
-    padding: 10px;
-    color: aliceblue;
-    font-size: 20px;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     align-items: center;
+    justify-content: flex-start;
+    height: 130px;
 }
 
-.button {
+.conteinerHeader h1 {
+    font-size: 65px;
+}
+
+.conteinerHeader img {
+    width: 9rem;
+    height: 9rem;
+    object-fit: contain;
+    margin: 0.5rem;
+    position: relative;
+}
+
+.newDog {
+    width: 55%;
+}
+
+.buttonCreated {
     text-decoration: none;
-    font-family: Arial, sans-serif;
-    background-color: var(--color-amarillo);
+    background-color: var(--color-celeste-claro);
     font-size: 15px;
     font-weight: bold;
-    border-color: var(--color-amarillo);
-    border-radius: 20px;
+    border: none;
     padding: 10px 20px 10px 20px;
-    order: initial;
+    margin: 10px;
+    transition: background-color .2s;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    color: rgb(242, 255, 217);
+    float: right;
+}
+
+.buttonCreated:hover {
+    font-weight: bold;
+    border-color:rgb(17, 9, 88) ;
+    background-color: rgb(17, 9, 88);
 }
 
 .conteinerBody {
     display: grid;
-    background-color: rgb(119, 113, 113);
-    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    max-width: 100%;
+    background: linear-gradient(rgb(18, 18, 18), rgb(255, 255, 255));
 }
  
 .conteinerFiltersOrders {
-    width: 100%;
-    height: 60px;
-    border: 1px solid rgba(7, 7, 7, 0.301);
-    background-color: rgb(56, 19, 90)7, 207;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(46, 45, 45, 0.301);
+    background-color: rgb(248, 159, 108);
+    border-radius: 30px;
     text-align: center;
-    padding: 10px;
+    padding: 32px;
+    gap: 15px;
+    margin: 30px;
+
 }
 
 .conteinerRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     position: relative;
-    margin: 5px;
-
+    position: static;
 }
 
 .conteinerCards {
@@ -53,4 +92,30 @@
     /* display: flex;
     flex-wrap: wrap; */
     gap: 5px;
+    position: static;
+}
+
+.conteinerFiltersOrders select {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.buttonRefresh {
+    text-decoration: none;
+    background-color: rgb(196, 35, 35);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    transition: background-color .2s;
+    cursor: pointer;
+    border: none;
+    color: rgb(248, 159, 108);
+}
+
+.buttonRefresh:hover {
+    font-weight: bold;
+    color: white;
+    border-color:rgb(236, 87, 0) ;
+    background-color: rgb(236, 87, 0);
 }

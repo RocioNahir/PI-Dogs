@@ -10,37 +10,55 @@ export const GET_DETAIL_ID = 'GET_DETAIL_ID';
 export const FILTER_CREATED = 'FILTER_CREATED';
 export const CREATE_DOG = 'CREATE_DOG';
 export const CLEAR_DETAIL = 'CLEAR_DETAIL';
-
-export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const CLEAR_CARDS = 'CLEAR_CARDS';
 
 
 export function getAllDogs(){
-    return async function(dispatch) {
-        let dogs = await axios.get("http://localhost:3001/dogs");
-        return dispatch({
-            type: GET_DOGS,
-            payload: dogs.data
-        })
+    return async function(dispatch){
+        try {
+            let dogs = await axios.get("http://localhost:3001/dogs");
+            return dispatch({
+                type: GET_DOGS,
+                payload: dogs.data
+            })
+        } catch(err){
+            console.log(err)
+        }
+    }
+}
+
+export function clearCards(payload){
+    return {
+    type: CLEAR_CARDS,
+    payload
     }
 }
 
 export function getAllTemperament(){
     return async function(dispatch){
-        let temperaments = await axios.get("http://localhost:3001/temperament");
-        return dispatch({
-            type: GET_ALL_TEMPERAMENTS,
-            payload: temperaments.data
-        })
+        try{
+            let temperaments = await axios.get("http://localhost:3001/temperament");
+            return dispatch({
+                type: GET_ALL_TEMPERAMENTS,
+                payload: temperaments.data
+            })
+        } catch(err){
+            console.log(err)
+        }
     }
 }
 
 export function getNameDog(payload){
     return async function(dispatch){
-        let name = await axios.get(`http://localhost:3001/dogs?name=${payload}`)
-        return dispatch({
-            type: GET_NAME_DOG,
-            payload: name.data
-        })
+        try {
+            let name = await axios.get(`http://localhost:3001/dogs?name=${payload}`)
+            return dispatch({
+                type: GET_NAME_DOG,
+                payload: name.data
+            })
+        } catch(err){
+            console.log(err);
+        }
     }
 }
 
@@ -67,11 +85,15 @@ export function orderByWeight(payload){
 
 export function getDetailId(id){
     return async function(dispatch){
-        let getId = await axios.get(`http://localhost:3001/dogs/${id}`)
-        return dispatch({
-            type: GET_DETAIL_ID,
-            payload: getId.data
-        })
+        try{
+            let getId = await axios.get(`http://localhost:3001/dogs/${id}`)
+            return dispatch({
+                type: GET_DETAIL_ID,
+                payload: getId.data
+            })
+        } catch(err){
+            console.log(err)
+        }
     }
 }
 
@@ -91,14 +113,14 @@ export function createDog(payload){
                 payload: create
             })
         } catch(err){
-            console.log(err.response);
+            console.log(err);
         }
     }
 }
 
 export function clearDetail(payload){
     return {
-    type: CLEAR_DETAIL,
-    payload
+        type: CLEAR_DETAIL,
+        payload
     }
 }

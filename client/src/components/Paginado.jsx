@@ -43,11 +43,11 @@ export default function Paginado({paginado, dogsPerPage, allDogs, page}){
 
     return(
         <div className={style.paginationConteiner}> 
-            <a className={page <= 1 ? style.disabled : style.pagination } onClick={() => handlePrevButton()}>Prev</a>
+            <a className={page <= 1 ? style.disabledPrev : style.paginationPrev } onClick={() => handlePrevButton()}>Prev</a>
             
             {indice}
             
-            <a className={page >= pageNumber.length ? style.disabled : style.pagination } onClick={() => handleNextButton()}>Next</a>
+            <a className={page >= pageNumber.length ? style.disabledNext : style.paginationNext } onClick={() => handleNextButton()}>Next</a>
         </div>
     )
 }

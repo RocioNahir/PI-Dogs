@@ -67,7 +67,7 @@ async function getAllDogs(req, res, next) {
             if (dogName.length) {
                 res.send(dogName);
             } else {
-                res.status(404).send('No existe raza')
+                res.status(400).send('No se encontro');
             }
         } else {
             res.send(allDogs);
