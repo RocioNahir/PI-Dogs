@@ -60,17 +60,18 @@ export default function Home(){
     }
 
     return(
-        <div className={style.conteiner}> 
+        <div className={style.wrapperAll}> 
             <div className={style.conteinerHeader}>
-                <img src={logo} alt=""/>
-                <h1>Henry's Dogs</h1>
+                <div className={style.title}>
+                    <h1>Henry's Dogs</h1>
+                    <p>Find your 4-legged friend</p>
+                </div>
                 <Link to='/dog' className={style.newDog}>
-                    <button className={style.buttonCreated}>Agregar raza</button>
+                    <button className={style.buttonCreated}>Add a breed</button>
                 </Link>
             </div>
             <div className={style.conteinerBody}>
                 <div className={style.conteinerFiltersOrders}>
-                    <SearchBar/>
                     <label>Order by: </label>
                     <select className={style.selectAlfabethic} onChange={e => {handleOrderAlfhabetic(e)}}>
                         <option value='By Alfabhetic'> Alfabethic </option>
@@ -79,14 +80,14 @@ export default function Home(){
                     </select>
                     <select onChange={e => handleOrderByWeight(e)}>
                         <option value='By weight'>Weight</option>
-                        <option value='asc'>Ascendente</option>
-                        <option value='des'>Descendiente</option>
+                        <option value='asc'>Higher to lower</option>
+                        <option value='des'>Lower to higher</option>
                     </select>
                     <label>Filter by: </label>
                     <select onChange={e => handleFilterCreated(e)}>
                         <option value='all'>All</option>
-                        <option value='created'>Creados</option>
-                        <option value='api'>Existentes</option>
+                        <option value='created'>Created</option>
+                        <option value='api'>Default</option>
                     </select>
                     <select onChange={e => handleFilterTemp(e)}>
                         <option value='Select Temperament...'>Select Temperament...</option>
@@ -94,10 +95,10 @@ export default function Home(){
                             return <option value={el.name}>{el.name}</option>
                         })}
                     </select>
-                    <button className={style.buttonRefresh} onClick={e => {handleClick(e)}}>Refresh all dogs</button>
+                    <SearchBar/>
+                    <button className={style.buttonRefresh} onClick={e => {handleClick(e)}}>Refresh</button>
                 </div>
                 <div className={style.conteinerRight}>
-                    <Paginado paginado={paginado} dogsPerPage={dogsPerPage} allDogs={allDogs} page={page}/>
                     <div className={style.conteinerCards}>
                         {dogsPage.length ? dogsPage.map( el => {
                             console.log(dogsPage, 'ERRROR')
@@ -111,6 +112,7 @@ export default function Home(){
                         }) 
                         : <p>Cargando...</p>}
                     </div>
+                    <Paginado paginado={paginado} dogsPerPage={dogsPerPage} allDogs={allDogs} page={page}/>
                 </div>
             </div>
         </div>

@@ -1,18 +1,15 @@
 
 .card {
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
+    flex-direction: row;
+    /* overflow: hidden; */
     align-items: center;
-    justify-items: center;
-    padding: 15px;
-    width: 180px;
-    gap: 0px;
-    height: 250px;
+    padding: 10px;
+    width: 310px;
+    height: 180px;
     border: none;
-    border-radius: 15px;
-    background-color: rgb(245, 243, 243);
+    border-radius: 20px;
+    background-color: #A8A8A8;
     margin: 15px;
     transition: background-color .2s;
     cursor: pointer;
@@ -25,9 +22,9 @@
 
 .card h3 {
     color: rgb(34, 34, 34);
-    margin: 5px;
     font-size: 21px;
     text-decoration: none;
+    text-align: right;
 }
 
 .card p {
@@ -35,11 +32,10 @@
     color: black;
     margin: 0;
     text-decoration: none;
+    text-align: right;
 }
 
 .image{
     position: relative;
     object-position: center;
-    /* width: auto;
-    height: auto; */
 }
