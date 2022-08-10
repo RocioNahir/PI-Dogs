@@ -6,7 +6,7 @@
     align-items: center;
     padding: 10px;
     width: 310px;
-    height: 180px;
+    height: 170px;
     border: none;
     border-radius: 20px;
     background-color: #A8A8A8;
@@ -30,7 +30,6 @@
 .card p {
     font-size: small;
     color: black;
-    margin: 0;
     text-decoration: none;
     text-align: right;
 }

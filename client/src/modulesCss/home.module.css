@@ -4,11 +4,15 @@
 }
 
 .conteinerHeader {
+    background-image: url(../assets/dog-models-dragon-wings-costume.jpg), linear-gradient(to top, #FFAA31, #FF9E23);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 40px;
+    background-color: #FFAA31;
     display: flex;
     flex-direction: row;
-    background-color: #FF9E23;
-    align-content: center;
     justify-content: center;
+    align-content: center;
     height: 130px;
     width: 100%;
 }
@@ -16,52 +20,41 @@
 .conteinerHeader .title {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: aqua;
+    width: 70%;
 }
 
 .conteinerHeader h1 {
     font-family:'Fredoka', sans-serif;
-    font-size: 70px;
+    font-size: 65px;
     font-weight: 700;
     color: white;
+    line-height: 47px;
+    background-color: aquamarine;
 }
 
 .conteinerHeader p {
     font-family: 'Nunito', sans-serif;
-    font-size: 20px;
+    font-size: 13px;
     color: white;
-}
-
-.conteinerHeader img {
-    width: 9rem;
-    height: 9rem;
-    object-fit: contain;
-    margin: 0.5rem;
-    position: relative;
-}
-
-.newDog {
-    width: 55%;
+    background-color: black;
 }
 
 .buttonCreated {
+    width: 160px;
+    height: 60px;
+    color: rgb(0, 0, 0);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
     text-decoration: none;
     background-color: var(--color-red);
-    font-size: 15px;
-    font-weight: bold;
     border: none;
-    padding: 10px 20px 10px 20px;
+    padding: 10px;
     margin: 10px;
     transition: background-color .2s;
     cursor: pointer;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    color: rgb(242, 255, 217);
-    float: right;
+    float: left;
 }
 
 .buttonCreated:hover {
@@ -86,7 +79,7 @@
     text-align: center;
     padding: 10px;
     gap: 20px;
-    margin: 10px;
+    margin: 5px;
 
 }
 
@@ -95,13 +88,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .conteinerCards {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 5px;
 }
 
 select {
