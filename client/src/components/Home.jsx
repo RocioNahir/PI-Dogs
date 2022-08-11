@@ -7,7 +7,7 @@ import Card from './Card';
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
 import style from '../modulesCss/home.module.css';
-import logo from '../assets/logo.svg';
+import notFound from '../assets/shiba-inu.png';
 
 export default function Home(){
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export default function Home(){
     const [orden, setOrden] = useState('') //orden
     const [page, setPage] = useState(1); //paginado
     const [ dogsPerPage, setDogsPerPage] = useState(8); //cards por pagina
-    const dogsPage = allDogs.slice((page - 1) * dogsPerPage, (page - 1) * dogsPerPage + dogsPerPage);
+    const dogsPage = Array.isArray(allDogs) ? allDogs.slice((page - 1) * dogsPerPage, (page - 1) * dogsPerPage + dogsPerPage) : allDogs;
 
     const paginado = (pageNumber) => {
         setPage(pageNumber) 
@@ -63,8 +63,8 @@ export default function Home(){
         <div className={style.wrapperAll}> 
             <div className={style.conteinerHeader}>
                 <div className={style.title}>
-                    <h1>Henry's Dogs</h1>
-                    <p>Find your 4-legged friend</p>
+                    <h1> Henry's Dogs</h1> 
+                    {/* <p>Find your 4-legged friend</p> */}
                 </div>
                 <Link to='/dog' className={style.newDog}>
                     <button className={style.buttonCreated}>Add a breed</button>
@@ -100,19 +100,52 @@ export default function Home(){
                 </div>
                 <div className={style.conteinerRight}>
                     <div className={style.conteinerCards}>
-                        {dogsPage.length ? dogsPage.map( el => {
-                            console.log(dogsPage, 'ERRROR')
-                            return (
-                                <div className={style.cards}>
-                                    <Link to={`/home/${el.id}`}>
-                                        <Card name={el.name} image={el.image} weight={el.weight} temperament={el.temperament}/>
-                                    </Link>
+                        {
+                            !Array.isArray(dogsPage)
+                            ? (<div>
+                                <h1>Not found</h1>
+                                <div className={style.gif}>
+                                    <img src={notFound}/>
                                 </div>
-                            )
-                        }) 
-                        : <p>Cargando...</p>}
+                                
+                                <p>No dog breed with that name was found. You can add or create a dog breed in the following link</p>
+                                <Link to='/dog'>
+                                    <button className={style.buttonCreated}>Add a breed</button>
+                                </Link>
+                                </div>)
+                            : 
+                            (dogsPage.length 
+                                ? dogsPage.map( el => {
+                                    return (
+                                        <div className={style.cards}>
+                                            <Link to={`/home/${el.id}`}>
+                                                <Card name={el.name} image={el.image} weight={el.weight} temperament={el.temperament}/>
+                                            </Link>
+                                        </div>
+                                    )
+                                }) 
+                                :   <div className={style.cargando}>       
+                                        <p>Loading...</p>
+                                        <div className={style.gif}>
+                                            <iframe src="https://giphy.com/embed/LRrc3OGe0cbrNO5US5" frameBorder={0} allowFullScreen></iframe>
+                                        </div>
+                                    </div>
+                                )
+                        }
                     </div>
                     <Paginado paginado={paginado} dogsPerPage={dogsPerPage} allDogs={allDogs} page={page}/>
+                </div>
+            </div>
+            <div className={style.footPage}>
+                <p>🌻​ ​Made with love by <b>Rocio Nahir</b></p>
+                <div className={style.links}>
+                    <p>Find me on:</p>
+                    <a href='https://github.com/RocioNahir' target="_blank">
+                        <button className={style.gitHub}></button>
+                    </a>
+                    <a href='https://www.linkedin.com/in/rocionahirarroyo/' target="_blank">
+                        <button className={style.linkedin}></button>
+                    </a>
                 </div>
             </div>
         </div>

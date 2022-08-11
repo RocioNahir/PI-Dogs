@@ -63,17 +63,18 @@ async function getAllDogs(req, res, next) {
         const { name } = req.query;
         const allDogs = await getAll();
         if(name) {
+            let error = "error"
             let dogName = await allDogs.filter(e => e.name.toLowerCase().includes(name.toLowerCase()));
             if (dogName.length) {
                 res.send(dogName);
             } else {
-                res.status(400).send('No se encontro');
+                res.status(400).json({Error: error})
             }
         } else {
             res.send(allDogs);
         }
     } catch(err) {
-        console.log(err);
+        res.status(404).json({Error: error.message})
     } 
 };
 
