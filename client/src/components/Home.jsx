@@ -102,22 +102,22 @@ export default function Home(){
                     <div className={style.conteinerCards}>
                         {
                             !Array.isArray(dogsPage)
-                            ? (<div>
-                                <h1>Not found</h1>
-                                <div className={style.gif}>
+                            ? (<div className={style.wrapperNotFound}>
                                     <img src={notFound}/>
+                                    <div className={style.notFoundText}>
+                                        <h3>Not found</h3>
+                                        <p>No dog breed with that name was found. You can add or create a dog breed in the following link</p>
+                                        <Link to='/dog'>
+                                            <button className={style.buttonCreated}>Add a breed</button>
+                                        </Link>
+                                    </div>
                                 </div>
-                                
-                                <p>No dog breed with that name was found. You can add or create a dog breed in the following link</p>
-                                <Link to='/dog'>
-                                    <button className={style.buttonCreated}>Add a breed</button>
-                                </Link>
-                                </div>)
+                                )
                             : 
                             (dogsPage.length 
                                 ? dogsPage.map( el => {
                                     return (
-                                        <div className={style.cards}>
+                                        <div className={style.cards} >
                                             <Link to={`/home/${el.id}`}>
                                                 <Card name={el.name} image={el.image} weight={el.weight} temperament={el.temperament}/>
                                             </Link>
@@ -125,7 +125,7 @@ export default function Home(){
                                     )
                                 }) 
                                 :   <div className={style.cargando}>       
-                                        <p>Loading...</p>
+                                        <h2>Loading...</h2>
                                         <div className={style.gif}>
                                             <iframe src="https://giphy.com/embed/LRrc3OGe0cbrNO5US5" frameBorder={0} allowFullScreen></iframe>
                                         </div>

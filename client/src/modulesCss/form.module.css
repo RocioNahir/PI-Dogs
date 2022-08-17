@@ -2,25 +2,54 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    width: 100%;
+    min-height: 100vh;
     background-image: url(../assets/backgroundForm-1comida.jpg);
     background-position: center center;
     background-size: cover;
-    position: relative;
-    width: 100%;
-    height: 100%;
+    font-family: 'Nunito', sans-serif;
 }
 
 .conteinerForm {
+    width: 63%;
+    min-height: 100vh;
+    padding: 10px;
     background-color: rgb(255, 255, 255);
-    border: 2px solid #d56306;
-    padding: 50px;
-    width: 57%;
-    height: 520px;
+    border: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.conteinerForm h1 {
-    font-size: 60px;
+.wrapperText{
+    padding: 5px;
+    margin: 10px;
 }
+
+.wrapperText h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin: 1px;
+}
+
+.wrapperText p {
+    margin: 0;
+}
+
+form {
+    margin: 15px;
+    font-weight: 600;
+}
+
+
+input {
+    font-size: 14px;
+    padding: 5px;
+    margin: 2px;
+    border: 1.7px solid #FF9E23;
+    border-radius: 18px;
+    color: #b46804;
+}
+
 
 .containerTemperaments{
     display: flex;
@@ -36,7 +65,7 @@
 
 .buttonTemperament{
     width: 15px;
-    height: 15px;
+    height: 20px;
     background-color: #d34d4b;
     border-color: #d34d4b;
     border-radius: 7px;
@@ -46,12 +75,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
 
 .containerTemperament{
     gap: 5px;
     margin: 5px;
-    background-color: #789ba3b0;
+    background-color: #0892A5;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -59,13 +89,20 @@
 }
 
 .buttonHome {
-    text-decoration: none;
-    background-color: rgb(255, 131, 59);
-    font-size: 15px;
+    width: 100px;
+    font-family:'Fredoka', sans-serif;
+    font-size: 18px;
     font-weight: bold;
+    text-align: right;
+    border: none;
+    border-radius: 20px;
     border-color: rgb(255, 131, 59);
     padding: 10px 20px 10px 20px;
     margin: 10px;
+    background-image: url(../assets/back.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+    background-color: #FF9E23;
     transition: background-color .2s;
     cursor: pointer;
     color: white;
@@ -90,8 +127,10 @@
 }
 
 .buttonCreate {
+    width: 150px;
+    height: 40px;
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    font-family:'Fredoka', sans-serif;
     background-color: var(--color-red);
     font-size: 15px;
     font-weight: bold;
@@ -99,18 +138,23 @@
     padding: 10px 20px 10px 20px;
     margin: 10px;
     color: rgb(255, 224, 224);
+    border: none;
+    transition: background-color .2s;
+    cursor: pointer;
 }
 
 .buttonCreate:hover {
     font-weight: bold;
     color: white;
-    border-color:rgb(255, 3, 3) ;
-    background-color: rgb(255, 3, 3);
+    border-color:rgb(186, 2, 2) ;
+    background-color: rgb(186, 2, 2) ;
 }
 
 .buttonCreateDisabled {
+    width: 150px;
+    height: 40px;
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    font-family:'Fredoka', sans-serif;
     background-color: rgb(133, 89, 89);
     font-size: 15px;
     font-weight: bold;
@@ -118,4 +162,5 @@
     padding: 10px 20px 10px 20px;
     margin: 10px;
     color: rgb(255, 224, 224);
+    border: none;
 }

@@ -38,6 +38,7 @@ const getDogsDb = async () => {
             height:e.height,
             weight:e.weight,
             life_span: e.life_span,
+            image: e.image,
             my_db: e.my_db,
             temperament: arrayTemperaments.toString()
         }

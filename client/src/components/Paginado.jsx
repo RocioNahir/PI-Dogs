@@ -11,14 +11,14 @@ export default function Paginado({paginado, dogsPerPage, allDogs, page}){
 
      
     const pageNumber = [];
-    for(let i = 1; i <= Math.ceil(allDogs.length/dogsPerPage); i++){
+    for(let i = 1; i <= Math.ceil(allDogs && allDogs.length/dogsPerPage); i++){
         pageNumber.push(i)
     }
     console.log(pageNumber)
 
     const indice = pageNumber && pageNumber.map(pag => {
         if(pag <= maxPageLimit  && pag > minPageLimit){  
-            return <a className={pag === page && style.active} onClick={() => paginado(pag)}>{pag}</a>
+            return <a className={pag === page ? style.active : style.x} onClick={() => paginado(pag)}>{pag}</a>
         } else return null;
         
     })
@@ -49,13 +49,5 @@ export default function Paginado({paginado, dogsPerPage, allDogs, page}){
             
             <a className={page >= pageNumber.length ? style.disabledNext : style.paginationNext } onClick={() => handleNextButton()}>Next</a>
         </div>
-
-            // <div> 
-            // <button onClick={() => handlePrevButton( pag - 1 )}>Prev</button>
-
-            // {indice}
-
-            // <button onClick={() => handleNextButton( pag + 1 )}>Next</button>
-            // </div>
     )
 }

@@ -4,7 +4,7 @@
     align-items: center;
     position: relative;
     font-size: 15px;
-    width: 610px;
+    width: 100%;
     margin: 10px;
   }
   
@@ -12,9 +12,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(224, 223, 223); 
+    color: #ffffff;
     height: 45px;
-    width: 45px;
+    width: 55px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color .2s;
@@ -22,20 +22,30 @@
     cursor: pointer;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    background-color: #FFAA31;;
   }
 
   .paginationConteiner a {
+    font-family: 'Nunito', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(224, 223, 223); 
     height: 45px;
-    width: 45px;
+    width: 55px;
     text-decoration: none;
     font-weight: bold;
-    background-color: rgb(248, 159, 108);
     transition: background-color .2s;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid #FFAA31;
+    cursor: pointer;
+  }
+
+  .x {
+    color: #FFAA31;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: white;
+    transition: background-color .2s;
+    border: 1px solid #FFAA31;
     cursor: pointer;
   }
 
@@ -43,9 +53,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(224, 223, 223); 
+    color: rgb(255, 255, 255); 
     height: 45px;
-    width: 50px;
+    width: 55px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color .2s;
@@ -53,24 +63,32 @@
     cursor: pointer;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    background-color: #FFAA31;
   }
 
 
   .paginationConteiner a.active {
+    color: white;
     background-color: var(--color-celeste-claro);
-    border: 1px solid turquoise;
+    border: 1px solid var(--color-celeste-claro);
   }
   
   .disabledPrev {
     opacity: 0.3;
+    color: rgb(0, 0, 0);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    background-color: rgb(163, 163, 163);
   }
 
   .disabledNext {
     opacity: 0.3;
+    color: rgb(0, 0, 0);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
   }
   
-  .paginationConteiner a:hover{background-color: rgb(83, 83, 83);}
+  .paginationConteiner a:hover{
+    color: white;
+    background-color: rgb(236, 87, 0);
+  }

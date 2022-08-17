@@ -15,6 +15,7 @@ export default function DogCreate(){
         weightMin: '',
         weightMax: '',
         life_span: '',
+        image: '',
         temperament: [], 
     })
 
@@ -67,6 +68,7 @@ export default function DogCreate(){
                 weightMin: '',
                 weightMax: '',
                 life_span: '',
+                image: '',
                 temperament: []
             });
         }  else {alert('Hubo un error en el formulario, intentalo otra vez')}
@@ -135,7 +137,11 @@ export default function DogCreate(){
     return( 
         <div className= {style.conteiner}>
             <div className={style.conteinerForm}>
-                <h1>Crea tu raza</h1>
+                <Link to='/home'><button className={style.buttonHome}>Back</button></Link>
+                <div className={style.wrapperText}>
+                    <h1>Add or Create a bread!</h1>
+                    <p>Complete the form to create a new file on the breed of a dog</p>
+                </div>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div>
                         <label>Name: </label>
@@ -150,7 +156,7 @@ export default function DogCreate(){
                         {error.name && (<span className={style.danger}>{error.name}</span>)}
                     </div>
                     <div>
-                        <label>Height Minimo: </label>
+                        <label>Minimum height: </label>
                         <input 
                             type='number' 
                             name='heightMin' 
@@ -162,7 +168,7 @@ export default function DogCreate(){
                         {error.heightMin && (<span className={style.danger}>{error.heightMin}</span>)}
                     </div>
                     <div>
-                        <label>Height Maximo: </label>
+                        <label>Maximum height: </label>
                         <input 
                             type='number' 
                             name='heightMax' 
@@ -174,7 +180,7 @@ export default function DogCreate(){
                         {error.heightMax && (<span className={style.danger}>{error.heightMax}</span>)}
                     </div>
                     <div>
-                        <label>Weight Minimo: </label>
+                        <label>Minimum weight: </label>
                         <input 
                             type='number'
                             name='weightMin' 
@@ -186,7 +192,7 @@ export default function DogCreate(){
                         {error.weightMin && (<span className={style.danger}>{error.weightMin}</span>)}
                     </div>
                     <div>
-                        <label>Weight Maximo: </label>
+                        <label>Maximum weight: </label>
                         <input 
                             type='number' 
                             name='weightMax'
@@ -210,6 +216,18 @@ export default function DogCreate(){
                         {error.life_span && (<span className={style.danger}>{error.life_span}</span>)}
                     </div>
                     <div>
+                        <label>URL Image: </label>
+                        <input 
+                            type='text' 
+                            name='image' 
+                            value={input.image} 
+                            placeHolder='https://...' 
+                            className={error?.image && style.borderDanger}
+                            onChange={(e) => handleChange(e)}
+                        />
+                        {error.image && (<span className={style.image}>{error.image}</span>)}
+                    </div>
+                    <div>
                         <label>Temperament: </label>
                         <select onChange={(e) => handleSelect(e)}>
                             <option value='Select Temperament...'>Select Temperament...</option>
@@ -218,10 +236,9 @@ export default function DogCreate(){
                             })}
                         </select> 
                     </div>
-                    <Link to='/home'><button className={style.buttonHome}>Volver a Home</button></Link>
                     {!error.name && !error.heightMin && !error.heightMax && !error.weightMin && !error.weightMax ? 
-                        <button type='submit' className={style.buttonCreate}>Crear!</button>
-                     : <button type='submit' disabled className={style.buttonCreateDisabled}>Crear!</button>}
+                        <button type='submit' className={style.buttonCreate}>Create!</button>
+                     : <button type='submit' disabled className={style.buttonCreateDisabled}>Create!</button>}
                 </form>
                 <div className={style.containerTemperaments}>
                     {input.temperament.map(el => 
